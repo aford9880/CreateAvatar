@@ -3,8 +3,8 @@ object FrmTesting: TFrmTesting
   Top = 0
   BorderStyle = bsSizeToolWin
   Caption = 'Testing'
-  ClientHeight = 886
-  ClientWidth = 884
+  ClientHeight = 582
+  ClientWidth = 543
   Color = clWhite
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -19,46 +19,34 @@ object FrmTesting: TFrmTesting
   OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
-  object BtnChangePic: TButton
-    Left = 0
-    Top = 861
-    Width = 884
-    Height = 25
-    Align = alBottom
-    Caption = #1048#1079#1084#1077#1085#1080#1090#1100
+  object crvypnl1: TCurvyPanel
+    Left = 8
+    Top = 8
+    Width = 257
+    Height = 553
+    BorderColor = cl3DLight
+    Color = cl3DLight
+    Rounding = 20
     TabOrder = 0
-    OnClick = BtnChangePicClick
-    ExplicitLeft = 16
-    ExplicitTop = 8
-    ExplicitWidth = 145
-  end
-  object Pnl1: TPanel
-    Left = 0
-    Top = 0
-    Width = 884
-    Height = 861
-    Align = alClient
-    BevelOuter = bvNone
-    TabOrder = 1
-    ExplicitLeft = 32
-    ExplicitTop = 56
-    ExplicitWidth = 521
-    ExplicitHeight = 433
     object ImageAvatar: TImage
-      Left = 0
-      Top = 0
-      Width = 884
-      Height = 861
-      Align = alClient
+      Left = 24
+      Top = 23
+      Width = 200
+      Height = 200
       Stretch = True
-      ExplicitLeft = 16
-      ExplicitTop = 39
-      ExplicitWidth = 145
-      ExplicitHeight = 137
+    end
+    object BtnChangePic: TButton
+      Left = 24
+      Top = 247
+      Width = 200
+      Height = 25
+      Caption = #1048#1079#1084#1077#1085#1080#1090#1100
+      TabOrder = 0
+      OnClick = BtnChangePicClick
     end
   end
   object dlgOpen1: TOpenDialog
-    Left = 208
-    Top = 8
+    Left = 312
+    Top = 16
   end
 end

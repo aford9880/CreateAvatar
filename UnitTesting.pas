@@ -7,14 +7,14 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   System.Math, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.ExtCtrls, PNGImage, Vcl.Direct2D, Winapi.D2D1;
+  Vcl.ExtCtrls, PNGImage, Vcl.Direct2D, Winapi.D2D1, CurvyControls;
 
 type
   TFrmTesting = class(TForm)
-    BtnChangePic: TButton;
     dlgOpen1: TOpenDialog;
-    Pnl1: TPanel;
+    crvypnl1: TCurvyPanel;
     ImageAvatar: TImage;
+    BtnChangePic: TButton;
     procedure FormCreate(Sender: TObject);
     procedure BtnChangePicClick(Sender: TObject);
     procedure FormMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
@@ -124,26 +124,26 @@ var
       AEllipse.ATop:= 1;
       AEllipse.ARight:= Mask.Width - 1;
       AEllipse.ABottom:= Mask.Height - 1;
-      APenWidth:= 10;
-      AColor:= 65280;
+      APenWidth:= 40; //10;
+      AColor:= clWhite; //$00FCC654;
       DrawCircle(DrawParams);
 
-      // середина
-      AEllipse.ALeft:= 10;
-      AEllipse.ATop:= 10;
-      AEllipse.ARight:= Mask.Width - 11;
-      AEllipse.ABottom:= Mask.Height - 11;
-      APenWidth:= 10;
-      AColor:= 10878633;
-      DrawCircle(DrawParams);
-
-      // внутренн€€
-      AEllipse.ALeft:= 20;
-      AEllipse.ATop:= 20;
-      AEllipse.ARight:= Mask.Width - 21;
-      AEllipse.ABottom:= Mask.Height - 21;
-      AColor:= 13434828;
-      DrawCircle(DrawParams);
+//      // середина
+//      AEllipse.ALeft:= 10;
+//      AEllipse.ATop:= 10;
+//      AEllipse.ARight:= Mask.Width - 11;
+//      AEllipse.ABottom:= Mask.Height - 11;
+//      APenWidth:= 10;
+//      AColor:= $00FDDB93;
+//      DrawCircle(DrawParams);
+//
+//      // внутренн€€
+//      AEllipse.ALeft:= 20;
+//      AEllipse.ATop:= 20;
+//      AEllipse.ARight:= Mask.Width - 21;
+//      AEllipse.ABottom:= Mask.Height - 21;
+//      AColor:= $00FEE9BC;
+//      DrawCircle(DrawParams);
     end;
 
     BMPSmooth.Free;
