@@ -12,8 +12,12 @@ uses
 type
   TFrmTesting = class(TForm)
     ImageAvatar: TImage;
+    BtnChangePic: TButton;
+    dlgOpen1: TOpenDialog;
     procedure FormCreate(Sender: TObject);
+    procedure BtnChangePicClick(Sender: TObject);
   private
+    procedure LoadPicture(PMask, PPic: string);
 
   public
     { Public declarations }
@@ -26,8 +30,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TFrmTesting.FormCreate(Sender: TObject);
-
+procedure TFrmTesting.LoadPicture(PMask, PPic: string);
   procedure ApplyMask(X, Y: Integer; Mask, Target: TPngImage);
   var
     dX, dY: Integer;
@@ -57,13 +60,24 @@ var
   PNG, FStatusMask: TPngImage;
 begin
   FStatusMask:= TPngImage.Create;
-  FStatusMask.LoadFromFile('mask.png');
+  FStatusMask.LoadFromFile(PMask);
   Pic:= TPicture.Create;
-  Pic.LoadFromFile('PNGSample.png');
+  Pic.LoadFromFile(PPic);
   PNG:= CreateAvatar(Pic.Graphic, FStatusMask);
   ImageAvatar.Picture.Assign(PNG);
   PNG.Free;
   Pic.Free;
+end;
+
+procedure TFrmTesting.BtnChangePicClick(Sender: TObject);
+begin
+  if dlgOpen1.Execute() then
+    LoadPicture('mask.png', dlgOpen1.FileName);
+end;
+
+procedure TFrmTesting.FormCreate(Sender: TObject);
+begin
+  LoadPicture('mask.png', 'PNGSample.png');
 end;
 
 end.
