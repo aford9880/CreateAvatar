@@ -3,9 +3,10 @@ object FrmTesting: TFrmTesting
   Top = 0
   BorderStyle = bsSizeToolWin
   Caption = 'Testing'
-  ClientHeight = 197
-  ClientWidth = 186
+  ClientHeight = 886
+  ClientWidth = 884
   Color = clWhite
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -14,26 +15,50 @@ object FrmTesting: TFrmTesting
   OldCreateOrder = False
   Position = poDesktopCenter
   OnCreate = FormCreate
+  OnMouseMove = FormMouseMove
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
-  object ImageAvatar: TImage
-    Left = 16
-    Top = 39
-    Width = 145
-    Height = 137
-    Stretch = True
-  end
   object BtnChangePic: TButton
-    Left = 16
-    Top = 8
-    Width = 145
+    Left = 0
+    Top = 861
+    Width = 884
     Height = 25
+    Align = alBottom
     Caption = #1048#1079#1084#1077#1085#1080#1090#1100
     TabOrder = 0
     OnClick = BtnChangePicClick
+    ExplicitLeft = 16
+    ExplicitTop = 8
+    ExplicitWidth = 145
+  end
+  object Pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 884
+    Height = 861
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+    ExplicitLeft = 32
+    ExplicitTop = 56
+    ExplicitWidth = 521
+    ExplicitHeight = 433
+    object ImageAvatar: TImage
+      Left = 0
+      Top = 0
+      Width = 884
+      Height = 861
+      Align = alClient
+      Stretch = True
+      ExplicitLeft = 16
+      ExplicitTop = 39
+      ExplicitWidth = 145
+      ExplicitHeight = 137
+    end
   end
   object dlgOpen1: TOpenDialog
-    Left = 136
-    Top = 152
+    Left = 208
+    Top = 8
   end
 end
